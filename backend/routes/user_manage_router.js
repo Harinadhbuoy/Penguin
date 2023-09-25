@@ -16,4 +16,6 @@ router.get('/getAllToursUser', user_manage_controller.getAllToursUser)
 
 router.post('/createBooking' , user_manage_controller.createBooking )
 
+router.get('/getUserBookings/:mail', user_manage_controller.getUserBookings )
+
 module.exports = router;

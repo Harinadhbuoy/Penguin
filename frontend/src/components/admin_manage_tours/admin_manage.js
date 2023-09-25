@@ -34,6 +34,7 @@ const ManageTourPackages = () => {
       
       const updatedtours = tour.filter((t) => t.id !== tourId); 
       setTour(updatedtours);
+      getTourdetails()
     } catch(error){
          console.error(" error ", error);
     }
@@ -45,6 +46,7 @@ const ManageTourPackages = () => {
     console.log("new tour", newTour);
     setTour([...tour, newTour]);
     await createnewTour(newTour);
+    getTourdetails()
     // alert("Tour added successfully");
   };
 

@@ -33,6 +33,11 @@
   .image-container {
     width: 100%;
   }
+
+  .image-container img{
+    width: 100vw;
+    background-size: cover;
+  }
   
   .page-image {
     width: 100%;

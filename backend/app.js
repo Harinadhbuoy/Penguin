@@ -37,7 +37,7 @@ app.use('/', signup_router);
 
 app.use('/dashboard', tours_router);
 
-app.use('/userdashboard', tours_user_router)
+app.use('/userdashboard' ,tours_user_router);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TourForm from './components/addtour_package/addtour_package';
 import UserHome from './components/userhome/user_home';
 import UserManageTours from './components/user_manage_tours/user_manage';
+import UserBookings from './components/user_bookings/user_bookings';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       </BrowserRouter>
       {/* <UserHome />  */}
       {/* <UserManageTours /> */}
+      {/* <UserBookings /> */}
     </div>
   );
 }
