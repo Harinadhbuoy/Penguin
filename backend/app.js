@@ -9,8 +9,11 @@ var bodyparser = require('body-parser')
 //importing router for signup
 var signup_router = require('./routes/register_router');
 
-//importing rout3er for tours 
+//importing router for tours 
 var tours_router = require('./routes/admin_manage_router')
+
+//importing user router for tours
+var tours_user_router = require('./routes/user_manage_router')
 
 var usersRouter = require('./routes/users');
 
@@ -33,6 +36,8 @@ app.use('/', signup_router);
 // app.use('/users', usersRouter);
 
 app.use('/dashboard', tours_router);
+
+app.use('/userdashboard', tours_user_router)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

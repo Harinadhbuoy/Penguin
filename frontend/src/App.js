@@ -8,6 +8,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import AdminHome from './components/admminhome/admin_home';
 // import ManageTourPackages from './components/admin_manage_tours/admin_manage';
 import TourForm from './components/addtour_package/addtour_package';
+import UserHome from './components/userhome/user_home';
+import UserManageTours from './components/user_manage_tours/user_manage';
 
 
 function App() {
@@ -21,7 +23,8 @@ function App() {
           <Route path="/userdashboard" element={<User_dashboard />} />
         </Routes>
       </BrowserRouter>
-      {/* <TourForm /> */}
+      {/* <UserHome />  */}
+      {/* <UserManageTours /> */}
     </div>
   );
 }

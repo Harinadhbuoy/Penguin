@@ -28,6 +28,8 @@ db.signuptable = require("./user")(sequelize,DataTypes)
 //importing tours table
 db.tourstable = require("./tours")(sequelize,DataTypes)
 
+db.bookingstable = require("./booking")(sequelize,DataTypes)
+
 db.sequelize.sync({ force: false }, () => {
     console.log("Sync done");
   });

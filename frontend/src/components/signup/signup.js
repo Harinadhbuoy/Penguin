@@ -28,10 +28,9 @@ const SignupPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your backend connection code here
     
+    // Add your backend connection code here
     login_signup_service.RegisterService(formData).then(response => {
-
       alert("Registration successful please login");
       Navigate('/')
       

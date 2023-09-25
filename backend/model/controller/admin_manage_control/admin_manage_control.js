@@ -33,7 +33,27 @@ const getAllTours = async (req , res) => {
     }
 };
 
+
+// controller for deleting tour
+const deleteTourById = async  (req , res) => {
+    console.log("id", req.body.tourId)
+    if(req.body.tourId){
+        await tours_table.destroy({
+            where : {
+                id : req.body.tourId,
+            }
+        });
+        res.send({statusCode: 200 ,  message: "deleted"})
+        console.log("delete successful");
+    } else {
+        res.status(400).send("delete failed");
+    }
+};
+
+
+
 module.exports = {
     createTour,
     getAllTours,
+    deleteTourById,
 };

@@ -4,10 +4,11 @@ import logo from "../../assets/images/image4.png";
 import image from "../../assets/images/image2.jpg";
 import { useNavigate } from 'react-router-dom';
 
-const AdminHome = () => {
-  const Navigate = useNavigate();
+const UserHome = () => {
+   const Navigate = useNavigate();
+
   const handleLogout = () => {
-    Navigate('/');
+    Navigate('/')
   };
 
   return (
@@ -28,4 +29,4 @@ const AdminHome = () => {
   );
 };
 
-export default AdminHome;
+export default UserHome;

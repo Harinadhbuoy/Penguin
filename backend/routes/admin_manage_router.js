@@ -10,4 +10,8 @@ router.post('/createTour', add_event_controller.createTour);
 
 router.get('/getAllTours', add_event_controller.getAllTours);
 
+router.put('/deleteTour', add_event_controller.deleteTourById);
+
+router.get('/getAllToursUser')
+
 module.exports = router;

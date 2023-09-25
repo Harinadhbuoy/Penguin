@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from 'react';
 // import TourForm from '../addtourpackage/addtourpackage';
-import { Link , useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
-import {createnewTour} from '../../services/admin_manage/admin_manage_services';
+import { createnewTour } from '../../services/admin_manage/admin_manage_services';
 import { getTours } from '../../services/admin_manage/admin_manage_services';
+import { deletetour } from '../../services/admin_manage/admin_manage_services';
 import "../../styles/admin_manage.css"
 import TourForm from '../addtour_package/addtour_package';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const ManageTourPackages = () => {
   const Navigate = useNavigate();
-  const [tour , setTour] = useState([]);
-  const [OriginalToursData , setoriginaltoursData] = useState("");
-  const [isModalOPen , setModalOpen] = useState(false);
+  const [tour, setTour] = useState([]);
+  const [OriginalToursData, setoriginaltoursData] = useState("");
+  const [isModalOPen, setModalOpen] = useState(false);
   const [accordionOpen, setAccordionOpen] = useState(true);
-  var [tableData, setTableData] = useState([
-    
-  ]);
+  var [tableData, setTableData] = useState([]);
 
   const toggleAccordion = () => {
     setAccordionOpen(!accordionOpen);
@@ -27,50 +26,37 @@ const ManageTourPackages = () => {
     console.log(`Edit record with ID: ${id}`);
   };
 
-  const handleDelete = (id) => {
-    // Implement delete logic here
-    console.log(`Delete record with ID: ${id}`);
+  const handleDelete = async (tourId) => {
+    try{
+      console.log("boom boom", tourId);
+
+      await deletetour(tourId);
+      
+      const updatedtours = tour.filter((t) => t.id !== tourId); 
+      setTour(updatedtours);
+    } catch(error){
+         console.error(" error ", error);
+    }
   };
+ 
 
 
   const handleAddtour = async (newTour) => {
-    console.log("new tour" , newTour);
+    console.log("new tour", newTour);
     setTour([...tour, newTour]);
     await createnewTour(newTour);
     // alert("Tour added successfully");
   };
 
 
-
-//   const loadData = async () => {
-//     console.log("get tours is called")
-//     let getToursDetails = await getTours();
-//     console.log('Tours Details' , getToursDetails);
-//     try{
-//         if(getToursDetails.status === 200) {
-//             setoriginaltoursData(getToursDetails.data.getTours)
-//             setTour(getToursDetails.data.getTours)
-//         } else{
-//             setoriginaltoursData("");
-//             setTour("");
-//         }
-//     } catch (error) {
-//         console.log(error);
-//     }
-//   };
-
-//   useEffect(() => {
-//     loadData();
-//   }, [tour]);
-
-const getTourdetails = async () =>{
+  const getTourdetails = async () => {
     console.log("tours button is clicked");
     let tours = await getTours();
     let toursarray = Object.values(tours.get_tours)
     tableData = toursarray
     setTableData(toursarray)
-    console.log("table frontend",tableData)
-}
+    console.log("table frontend", tableData)
+  }
   useEffect(() => {
     getTourdetails();
   }, []);
@@ -105,8 +91,12 @@ const getTourdetails = async () =>{
                     <td>{record.tour_original_price}</td>
                     <td>{record.tour_discount_price}</td>
                     <td>
-                      <button className= "my-btn" onClick={() => handleEdit(record.id)}>Edit</button>
                       <button className= "my-btn" onClick={() => handleDelete(record.id)}>Delete</button>
+                      {/* <IconButton
+                        color="secondary"
+                        onClick={() => handleDeleteTour(record.id)}>
+                        <DeleteIcon />
+                      </IconButton> */}
                     </td>
                   </tr>
                 ))}
@@ -115,15 +105,50 @@ const getTourdetails = async () =>{
           </div>
         )}
       </div>
-      <button onClick = {()=>setModalOpen(true)} className="my-btn">
+      <button onClick={() => setModalOpen(true)} className="my-btn">
         Add
       </button>
-    <TourForm isOpen={isModalOPen}
-    onClose={()=>setModalOpen(false)}
-    onSave={handleAddtour}
-    />
+      <TourForm isOpen={isModalOPen}
+        onClose={() => setModalOpen(false)}
+        onSave={handleAddtour}
+      />
     </div>
   );
 };
 
 export default ManageTourPackages;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // const loadData = async () => {
+    //   console.log("get tours is called")
+    //   let getToursDetails = await getTours();
+    //   console.log('Tours Details' , getToursDetails);
+    //   try{
+    //       if(getToursDetails.status === 200) {
+    //           setoriginaltoursData(getToursDetails.data.getTours)
+    //           setTour(getToursDetails.data.getTours)
+    //       } else{
+    //           setoriginaltoursData("");
+    //           setTour("");
+    //       }
+    //   } catch (error) {
+    //       console.log(error);
+    //   }
+    // };
+
+    // useEffect(() => {
+    //   loadData();
+    // }, [tour]);

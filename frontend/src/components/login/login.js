@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 import "../../styles/login.css";
 import logo from "../../assets/images/image3.webp";
@@ -27,6 +28,7 @@ const LoginPage = () => {
     console.log("submit is clicked");
     e.preventDefault();
     let logindetails = await login_signup_service.LoginService(formData);
+    sessionStorage.setItem("email",formData.email);
     console.log("email: ",logindetails.data.existingUser.email);
     
     if(logindetails.data.existingUser.email === "admin@gmail.com")

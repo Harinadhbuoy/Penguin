@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const tours = sequelize.define("tours", {
+    const bookings = sequelize.define("tour_bookings", {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -25,10 +25,10 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         unique: false
       },
-      // isDelete: {
-      //   type: DataTypes.STRING,
-      //   defaultValue: false,
-      // },
+      user_email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      },
     },
     {
       timestamps:false,
@@ -38,5 +38,5 @@ module.exports = (sequelize, DataTypes) => {
     
 );
 
-    return tours;
+    return bookings;
   };
