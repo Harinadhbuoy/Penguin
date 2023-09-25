@@ -21,9 +21,9 @@ const AdminHome = () => {
           Logout
         </button>
       </div>
-      <div className="image-container">
+      {/* <div className="image-container">
         <img src={image} alt="Image" className="page-image" />
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getToursUser } from '../../services/user_manage/user_manage_services';
 import { createnewBookingTour } from '../../services/user_manage/user_manage_services';
+import "../../styles/buttons.css";
 
 const UserManageTours = () =>  {
   const [accordionOpen, setAccordionOpen] = useState(true);

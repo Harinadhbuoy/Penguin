@@ -2,47 +2,46 @@
 
 /* Style for the accordion */
 .accordion {
-    width: 100%; /* Cover full width */
-    box-sizing: border-box;
-  }
-  
-  .accordion-header {
-    background-color: #f4f4f4;
-    cursor: pointer;
-    padding: 10px 20px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-  
-  .accordion-header.open {
-    background-color: #ccc;
-  }
-  
+  width: 100%; /* Cover full width */
+  box-sizing: border-box;
+}
+
+.accordion-header {
+  background-color: #f4f4f4;
+  cursor: pointer;
+  padding: 10px 20px;
+  /* border: 1px solid #ccc; */
+  box-sizing: border-box;
+}
+
+/* .accordion-header.open {
+  background-color: #ccc;
+} */
+
+.accordion-content {
+  padding: 10px 20px;
+  /* border: 1px solid #ccc; */
+  box-sizing: border-box;
+}
+
+/* Style for the table */
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.responsive-table th,
+.responsive-table td {
+  padding: 10px;
+  /* border: 1px solid #ccc; */
+  text-align: center;
+}
+
+/* Add responsive styles */
+@media (max-width: 768px) {
   .accordion-content {
-    padding: 10px 20px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+    overflow-x: auto;
   }
-  
-  /* Style for the table */
-  .responsive-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-  }
-  
-  .responsive-table th,
-  .responsive-table td {
-    padding: 10px;
-    border: 1px solid #ccc;
-    text-align: center;
-  }
-  
-  /* Add responsive styles */
-  @media (max-width: 768px) {
-    .accordion-content {
-      overflow-x: auto;
-    }
-  }
-  
+}

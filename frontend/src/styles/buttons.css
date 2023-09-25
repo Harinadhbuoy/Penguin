@@ -1,0 +1,12 @@
+.my-btn{
+    background-color: green;
+    color: white;
+    padding: .5rem;
+    border-radius: .4rem;
+}
+
+.my-btn:hover
+{
+  background-color: rgb(21, 178, 21);
+}
+

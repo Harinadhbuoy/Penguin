@@ -18,7 +18,7 @@ const Login_controller = async (req, res) => {
         // console.log("existing user",existingUser)
         if (existingUser) {
         // console.log("response",existingUser)
-        const token = jwt.sign({email: existingUser.email}, 'JMAN_USER_LOGIN',{expiresIn: "2d",}); // changed
+        const token = jwt.sign({email: existingUser.email}, 'JMAN_USER_LOGIN',{expiresIn: "2d",});
         // console.log("logged in user details",existingUser);
         
         console.log(token)
