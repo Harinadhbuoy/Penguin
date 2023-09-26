@@ -12,6 +12,6 @@ router.get('/getAllTours', add_event_controller.getAllTours);
 
 router.put('/deleteTour', add_event_controller.deleteTourById);
 
-router.get('/getAllToursUser')
+router.get('/getUserComplaints', add_event_controller.getUserComplaints);
 
 module.exports = router;

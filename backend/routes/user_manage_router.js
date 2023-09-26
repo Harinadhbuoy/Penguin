@@ -18,4 +18,6 @@ router.post('/createBooking' , user_manage_controller.createBooking )
 
 router.get('/getUserBookings/:mail', user_manage_controller.getUserBookings )
 
+router.post('/addComplaint', user_manage_controller.addComplaint)
+
 module.exports = router;

@@ -6,12 +6,12 @@ import { env } from "../../env";
 // creating tour
 export const createnewTour = async (newTour) => {
 
-    console.log(newTour);
+    console.log("jkgnjkgg",newTour);
     let createTour = await axios.post(`${env.REACT_APP_API}/dashboard/createTour`, {
         tour_name: newTour.tour_name,
         description: newTour.description,
-        tour_original_price: newTour.tour_original_amount,
-        tour_discount_price: newTour.tour_discount_amount
+        tour_original_price: newTour.tour_original_price,
+        tour_discount_price: newTour.tour_discount_price
     }).then((res) => {
         console.log("service response", res)
         toast.success("tour created :)");
@@ -42,6 +42,21 @@ export const deletetour = async(tourId) => {
     });
     return response;
 }
+
+
+
+export const getUserComplaints = async() => {
+    console.log("flow came to frontend service");
+    try{
+    let response = await axios.get(`${env.REACT_APP_API}/dashboard/getUserComplaints`);
+    console.log("from services boom",response.data)
+    return response.data;
+    }
+    catch(error) {
+        console.error("error getting tours",error);
+        throw error;
+    };
+};
 
 
 

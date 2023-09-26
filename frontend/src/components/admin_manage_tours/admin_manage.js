@@ -66,7 +66,7 @@ const ManageTourPackages = () => {
 
   return (
     <div>
-      <div className='my-heading'><h2> Our <span>packages</span> </h2></div>
+      <div className='my-heading'><h2> Our <span>packages</span></h2></div>
       <div className="accordion">
         <div className={`accordion-header ${accordionOpen ? 'open' : ''}`} onClick={toggleAccordion}>
           <p> Our Trending Packages</p>
@@ -107,7 +107,7 @@ const ManageTourPackages = () => {
           </div>
         )}
       </div>
-      <button onClick={() => setModalOpen(true)} className="my-btn">
+      <br/><button onClick={() => setModalOpen(true)} className="my-btn">
         Add
       </button>
       <TourForm isOpen={isModalOPen}

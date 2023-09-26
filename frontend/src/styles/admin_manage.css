@@ -6,8 +6,16 @@
   box-sizing: border-box;
 }
 
+.my-heading h2{
+  color: black;
+  text-align: center;
+}
+
+.my-heading h2
+
 .accordion-header {
-  background-color: #f4f4f4;
+  background-color: #FAEBD7;
+
   cursor: pointer;
   padding: 10px 20px;
   /* border: 1px solid #ccc; */
@@ -35,7 +43,7 @@
 .responsive-table th,
 .responsive-table td {
   padding: 10px;
-  /* border: 1px solid #ccc; */
+  border: 1px solid #ccc;
   text-align: center;
 }
 

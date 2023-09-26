@@ -30,6 +30,8 @@ db.tourstable = require("./tours")(sequelize,DataTypes)
 
 db.bookingstable = require("./booking")(sequelize,DataTypes)
 
+db.complaintstable = require("./complaint")(sequelize,DataTypes)
+
 db.sequelize.sync({ force: false }, () => {
     console.log("Sync done");
   });

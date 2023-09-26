@@ -52,3 +52,20 @@ export const getUserBookings = async(mail) => {
         throw error;
     };
 };
+
+
+export const AddNewComplaint = async (newComplaint) => {
+    console.log("complaint deetails before response", newComplaint);
+    let addComplaint = await axios.post(`${env.REACT_APP_API}/userdashboard/addComplaint`, {
+        complaint_category: newComplaint.complaint_category,
+        description: newComplaint.description,
+        complaint_reason: newComplaint.complaint_reason
+    }).then((res) => {
+        console.log("service response", res)
+        toast.success(" Complaint added successfully :)");
+        return res;
+    }).catch((err) => {
+        return err.response;
+    });
+    return addComplaint;
+};

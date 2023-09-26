@@ -1,12 +1,14 @@
 .my-btn{
-    background-color: green;
-    color: white;
-    padding: .5rem;
+    background-color: #FAEBD7;
+    color: black;
+    padding: .3rem;
     border-radius: .4rem;
+    border: none;
 }
 
 .my-btn:hover
 {
-  background-color: rgb(21, 178, 21);
+  background-color: #f8d4a6;
+    color: black;
 }
 
