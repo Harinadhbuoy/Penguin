@@ -10,7 +10,7 @@ function ComplaintForm({ isOpen, onClose, onSave }) {
     complaint_reason: "",
   });
 
- 
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setComplaint({
@@ -19,7 +19,7 @@ function ComplaintForm({ isOpen, onClose, onSave }) {
     });
   };
 
- 
+
 
   const handleSubmit = () => {
     onSave(complaint);
@@ -34,9 +34,9 @@ function ComplaintForm({ isOpen, onClose, onSave }) {
     onClose();
   };
 
- 
 
- 
+
+
 
   return (
     <Modal show={isOpen} onHide={onClose}>
@@ -54,13 +54,13 @@ function ComplaintForm({ isOpen, onClose, onSave }) {
               onChange={handleChange}
             />
           </Form.Group>
-            <Form.Label>Complaint Description</Form.Label>
-            <Form.Control
-              type="text"
-              name="description"
-              value={complaint.description}
-              onChange={handleChange}
-            />
+          <Form.Label>Complaint Description</Form.Label>
+          <Form.Control
+            type="text"
+            name="description"
+            value={complaint.description}
+            onChange={handleChange}
+          />
           <Form.Group>
             <Form.Label>Complaint Reason</Form.Label>
             <Form.Control
@@ -69,16 +69,6 @@ function ComplaintForm({ isOpen, onClose, onSave }) {
               value={complaint.complaint_reason}
               onChange={handleChange}
             />
-
-          {/* </Form.Group>
-          <Form.Group>
-            <Form.Label>Tour Discount Price</Form.Label>
-            <Form.Control
-              type="number"
-              name="tour_discount_amount"
-              value={tour.tour_discount_amount}
-              onChange={handleChange}
-            /> */}
           </Form.Group>
         </Form>
       </Modal.Body>
@@ -96,6 +86,6 @@ function ComplaintForm({ isOpen, onClose, onSave }) {
   );
 }
 
- 
+
 
 export default ComplaintForm;

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import TourForm from '../addtourpackage/addtourpackage';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
 import { createnewTour } from '../../services/admin_manage/admin_manage_services';
 import { getTours } from '../../services/admin_manage/admin_manage_services';
@@ -12,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const ManageTourPackages = () => {
   const Navigate = useNavigate();
   const [tour, setTour] = useState([]);
-  const [OriginalToursData, setoriginaltoursData] = useState("");
+  // const [OriginalToursData, setoriginaltoursData] = useState("");
   const [isModalOPen, setModalOpen] = useState(false);
   const [accordionOpen, setAccordionOpen] = useState(true);
   var [tableData, setTableData] = useState([]);
@@ -21,28 +20,31 @@ const ManageTourPackages = () => {
     setAccordionOpen(!accordionOpen);
   };
 
-  const handleEdit = (id) => {
-    // Implement edit logic here
-    console.log(`Edit record with ID: ${id}`);
-  };
+  // const handleEdit = (id) => {
+  //   console.log(`Edit record with ID: ${id}`);
+  // };
+
+
+  // Delete function frontend service
 
   const handleDelete = async (tourId) => {
-    try{
+    try {
       console.log("boom boom", tourId);
 
       await deletetour(tourId);
       toast.error('Tour deleted !', {
         position: toast.POSITION.TOP_RIGHT
       });
-      const updatedtours = tour.filter((t) => t.id !== tourId); 
+      const updatedtours = tour.filter((t) => t.id !== tourId);
       setTour(updatedtours);
       getTourdetails()
-    } catch(error){
-         console.error(" error ", error);
+    } catch (error) {
+      console.error(" error ", error);
     }
   };
- 
 
+
+  // Add function frontend service
 
   const handleAddtour = async (newTour) => {
     console.log("new tour", newTour);
@@ -53,6 +55,7 @@ const ManageTourPackages = () => {
   };
 
 
+  // Load tours function frontend service 
   const getTourdetails = async () => {
     console.log("tours button is clicked");
     let tours = await getTours();
@@ -95,12 +98,7 @@ const ManageTourPackages = () => {
                     <td>{record.tour_original_price}</td>
                     <td>{record.tour_discount_price}</td>
                     <td>
-                      <button className= "my-btn" onClick={() => handleDelete(record.id)}>Delete</button>
-                      {/* <IconButton
-                        color="secondary"
-                        onClick={() => handleDeleteTour(record.id)}>
-                        <DeleteIcon />
-                      </IconButton> */}
+                      <button className="my-btn" onClick={() => handleDelete(record.id)}>Delete</button>
                     </td>
                   </tr>
                 ))}
@@ -109,7 +107,7 @@ const ManageTourPackages = () => {
           </div>
         )}
       </div>
-      <br/><button onClick={() => setModalOpen(true)} className="my-btn">
+      <br /><button onClick={() => setModalOpen(true)} className="my-btn">
         Add
       </button>
       <TourForm isOpen={isModalOPen}
@@ -136,23 +134,23 @@ export default ManageTourPackages;
 
 
 
-    // const loadData = async () => {
-    //   console.log("get tours is called")
-    //   let getToursDetails = await getTours();
-    //   console.log('Tours Details' , getToursDetails);
-    //   try{
-    //       if(getToursDetails.status === 200) {
-    //           setoriginaltoursData(getToursDetails.data.getTours)
-    //           setTour(getToursDetails.data.getTours)
-    //       } else{
-    //           setoriginaltoursData("");
-    //           setTour("");
-    //       }
-    //   } catch (error) {
-    //       console.log(error);
-    //   }
-    // };
+// const loadData = async () => {
+//   console.log("get tours is called")
+//   let getToursDetails = await getTours();
+//   console.log('Tours Details' , getToursDetails);
+//   try{
+//       if(getToursDetails.status === 200) {
+//           setoriginaltoursData(getToursDetails.data.getTours)
+//           setTour(getToursDetails.data.getTours)
+//       } else{
+//           setoriginaltoursData("");
+//           setTour("");
+//       }
+//   } catch (error) {
+//       console.log(error);
+//   }
+// };
 
-    // useEffect(() => {
-    //   loadData();
-    // }, [tour]);
+// useEffect(() => {
+//   loadData();
+// }, [tour]);

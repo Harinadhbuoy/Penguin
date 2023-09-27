@@ -1,12 +1,11 @@
 import axios from "axios";
-import { toast } from "react-toastify";
 import { env } from "../../env";
 
 
-// creating tour
+// creating tour service
 export const createnewTour = async (newTour) => {
 
-    console.log("jkgnjkgg",newTour);
+    console.log("jkgnjkgg", newTour);
     let createTour = await axios.post(`${env.REACT_APP_API}/dashboard/createTour`, {
         tour_name: newTour.tour_name,
         description: newTour.description,
@@ -21,38 +20,39 @@ export const createnewTour = async (newTour) => {
     return createTour;
 };
 
-
-export const getTours = async() => {
-    try{
-    let response = await axios.get(`${env.REACT_APP_API}/dashboard/getAllTours`);
-    console.log("from services",response.data)
-    return response.data;
+// Get tours service
+export const getTours = async () => {
+    try {
+        let response = await axios.get(`${env.REACT_APP_API}/dashboard/getAllTours`);
+        console.log("from services", response.data)
+        return response.data;
     }
-    catch(error) {
-        console.error("error getting events",error);
+    catch (error) {
+        console.error("error getting events", error);
         throw error;
     };
 };
 
 
-export const deletetour = async(tourId) => {
-    const response = await axios.put(`${env.REACT_APP_API}/dashboard/deleteTour`,{
-        tourId : tourId,
+// Delete tour service
+export const deletetour = async (tourId) => {
+    const response = await axios.put(`${env.REACT_APP_API}/dashboard/deleteTour`, {
+        tourId: tourId,
     });
     return response;
 }
 
 
-
-export const getUserComplaints = async() => {
+// get complaints service
+export const getUserComplaints = async () => {
     console.log("flow came to frontend service");
-    try{
-    let response = await axios.get(`${env.REACT_APP_API}/dashboard/getUserComplaints`);
-    console.log("from services boom",response.data)
-    return response.data;
+    try {
+        let response = await axios.get(`${env.REACT_APP_API}/dashboard/getUserComplaints`);
+        console.log("from services boom", response.data)
+        return response.data;
     }
-    catch(error) {
-        console.error("error getting tours",error);
+    catch (error) {
+        console.error("error getting tours", error);
         throw error;
     };
 };

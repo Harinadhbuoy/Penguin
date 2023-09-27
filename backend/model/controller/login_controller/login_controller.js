@@ -5,28 +5,30 @@ const jwt = require('jsonwebtoken')
 
 const Login_controller = async (req, res) => {
   const { email, password } = req.body;
-  console.log("Email",email)
+  console.log("Email", email)
   if (password && email) {
     console.log("if")
     try {
-        console.log("try")
+      console.log("try")
       // Check if a user with the same email already exists in the database
-        const existingUser = await user_table.findOne({ 
-        where: 
-        { email: email,
-         }});
-        // console.log("existing user",existingUser)
-        if (existingUser) {
+      const existingUser = await user_table.findOne({
+        where:
+        {
+          email: email,
+        }
+      });
+      // console.log("existing user",existingUser)
+      if (existingUser) {
         // console.log("response",existingUser)
-        const token = jwt.sign({email: existingUser.email}, 'JMAN_USER_LOGIN',{expiresIn: "2d",});
+        const token = jwt.sign({ email: existingUser.email }, 'JMAN_USER_LOGIN', { expiresIn: "2d", });
         // console.log("logged in user details",existingUser);
-        
+
         console.log(token)
-        res.status(200).send({message:"success",existingUser})
-        
-      } else{
-        
-            res.status(200).send({message:"User does not Existed; Please Sign Up."})
+        res.status(200).send({ message: "success", existingUser })
+
+      } else {
+
+        res.status(200).send({ message: "User does not Existed; Please Sign Up." })
       }
 
     } catch (error) {
@@ -36,11 +38,11 @@ const Login_controller = async (req, res) => {
     }
 
   } else {
-    res.status(200).send({ message: "All fields are mandatory ; Please fill it."});
+    res.status(200).send({ message: "All fields are mandatory ; Please fill it." });
   }
 };
 
 
 module.exports = {
-    Login_controller,
+  Login_controller,
 };

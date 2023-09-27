@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import "../../styles/login.css";
 import logo from "../../assets/images/login.png";
 import login_signup_service from "../../services/signinup_services/login_signup_service";
@@ -21,32 +20,34 @@ const LoginPage = () => {
     });
   };
 
-  const handleBtton = () =>{
-      Navigate('/signup')
+
+  const handleBtton = () => {
+    Navigate('/signup');
   }
 
+  // frontend service for login
   const handleSubmit = async (e) => {
     console.log("submit is clicked");
     e.preventDefault();
     let logindetails = await login_signup_service.LoginService(formData);
-    sessionStorage.setItem("email",formData.email);
-    console.log("email: ",logindetails.data.existingUser.email);
+    sessionStorage.setItem("email", formData.email);
+    console.log("email: ", logindetails.data.existingUser.email);
 
-    if(logindetails.data.existingUser.email === "admin@gmail.com")
-    {
+    if (logindetails.data.existingUser.email === "admin@gmail.com") {
       toast.success('Admin login successfull !', {
         position: toast.POSITION.TOP_RIGHT
-    });
+      });
       Navigate('/admindashboard');
     }
-    else
-    {
+    else {
       toast.success('User login successfull !', {
         position: toast.POSITION.TOP_RIGHT
       });
       Navigate('/userdashboard');
     }
   };
+
+
 
   return (
     <div className="signup-container">
@@ -79,8 +80,8 @@ const LoginPage = () => {
             required
           />
           <div className='my-buttons'>
-          <button type="submit"  onClick={handleBtton}>New User?</button>
-          <button type="submit">SignIn</button>
+            <button type="submit" onClick={handleBtton}>New User?</button>
+            <button type="submit">SignIn</button>
           </div>
         </form>
       </div>

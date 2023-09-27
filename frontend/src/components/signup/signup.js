@@ -56,6 +56,7 @@ const SignupPage = () => {
     Navigate('/')
   }
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -66,7 +67,7 @@ const SignupPage = () => {
       return;
     }
 
-    // Add your backend connection code here
+    // frontend service for signup
     login_signup_service.RegisterService(formData).then(response => {
       toast.success('Signup successful! Please login.', {
         position: toast.POSITION.TOP_RIGHT

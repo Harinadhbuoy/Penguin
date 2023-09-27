@@ -1,79 +1,80 @@
-html, body {
-    height: 100%;
-    margin: 0;
-  }
-  
-  .signup-container {
-    display: flex;
-    flex-wrap: wrap;
-    height: 100vh;
-  }
-  
-  .left-container {
-    flex: 1;
-    height: 100%;
-  }
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
 
-  .right-container{
-    flex: 1;
-    height: 100%;
-  }
-  
-  .signup-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-    max-width: 60%;
-    margin-left: 5rem;
-  }
+.signup-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+
+.left-container {
+  flex: 1;
+  height: 100%;
+}
+
+.right-container {
+  flex: 1;
+  height: 100%;
+}
+
+.signup-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  max-width: 60%;
+  margin-left: 5rem;
+}
 
 
 
-  /* Add the following CSS to style the right container fields */
+/* Add the following CSS to style the right container fields */
 
 .right-container input {
-    margin: 10px 0;
-    padding: 10px;
-    width: calc(100% - 20px);
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  
-  .right-container button {
-    margin-top: 10px;
-    padding: 10px;
-    width: calc(100% - 20px);
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .right-container button:hover {
-    background-color: #0056b3;
-  }
-  
+  margin: 10px 0;
+  padding: 10px;
+  width: calc(100% - 20px);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.right-container button {
+  margin-top: 10px;
+  padding: 10px;
+  width: calc(100% - 20px);
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.right-container button:hover {
+  background-color: #0056b3;
+}
+
 /* Add media query for smaller screens */
 @media (max-width: 800px) {
-    .signup-container {
-      flex-direction: column;
-    }
-  
-    .left-container, .right-container {
-      max-width: 100%;
-    }
+  .signup-container {
+    flex-direction: column;
   }
-  
-  
-  /* Rest of the CSS remains the same */
-  
+
+  .left-container,
+  .right-container {
+    max-width: 100%;
+  }
+}
+
+
+/* Rest of the CSS remains the same */

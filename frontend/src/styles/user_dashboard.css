@@ -1,14 +1,13 @@
-
 .user-dashboard {
-    background-image: url('C:\Users\KaricharlaHarinadh\Tour_management_System\Penguin\frontend\src\assets\images\maldives-island-hd.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-    background-repeat: no-repeat !important;
-    background-size: auto;
-    /* position: fixed;
+  background-image: url('C:\Users\KaricharlaHarinadh\Tour_management_System\Penguin\frontend\src\assets\images\maldives-island-hd.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  background-repeat: no-repeat !important;
+  background-size: auto;
+  /* position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0; */
-  }
+}

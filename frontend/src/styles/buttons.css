@@ -1,14 +1,13 @@
-.my-btn{
-    background-color: #005280;
-    color: white;
-    padding: .3rem;
-    border-radius: .4rem;
-    border: none;
+.my-btn {
+  background-color: #005280;
+  color: white;
+  padding: .3rem;
+  border-radius: .4rem;
+  border: none;
+  margin-left: 1rem;
 }
 
-.my-btn:hover
-{
+.my-btn:hover {
   background-color: #f8d4a6;
-    color: black;
+  color: black;
 }
-
