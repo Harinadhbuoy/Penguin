@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { getToursUser } from '../../services/user_manage/user_manage_services';
 import { createnewBookingTour } from '../../services/user_manage/user_manage_services';
-import "../../styles/buttons.css";
+import "../../styles/buttons.css"
 
 const UserManageTours = () =>  {
   const [accordionOpen, setAccordionOpen] = useState(true);
@@ -24,7 +25,9 @@ const UserManageTours = () =>  {
     // calling the service
     let newBooking = await createnewBookingTour(data_dic)
     .then((newBooking => {
-        alert("tour booked");
+        toast.success('Tour booked successfull !', {
+            position: toast.POSITION.TOP_RIGHT
+          });
     }))
   }
 
@@ -84,9 +87,12 @@ return (
           </div>
         )}
       </div>
-      <button onClick={getTourdetails} className="my-btn">
+      <br/><button onClick={getTourdetails} className =  "my-btn">
         view tours
       </button>
+      {/* <br/><button onClick={getTourdetails} className="my-btn">
+        view tours
+      </button> */}
     </div>
   );
 };

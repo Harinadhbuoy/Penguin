@@ -47,7 +47,7 @@ const viewBookingDetails = async () => {
 
 return (
     <div>
-      <div className='my-heading'><h2><span>Bookings</span> </h2></div>
+      <div className='my-heading'><h2>Your <span>Bookings</span> </h2></div>
       <div className="accordion">
         <div className={`accordion-header ${accordionOpen ? 'open' : ''}`} onClick={toggleAccordion}>
           <p>Your Booked Packages</p>
@@ -88,7 +88,7 @@ return (
           </div>
         )}
       </div>
-      <button onClick={viewBookingDetails} className="my-btn">
+      <br/><button onClick={viewBookingDetails} className="my-btn">
         view bookings
       </button>
     </div>

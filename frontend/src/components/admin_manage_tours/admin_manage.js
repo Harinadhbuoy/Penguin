@@ -31,7 +31,9 @@ const ManageTourPackages = () => {
       console.log("boom boom", tourId);
 
       await deletetour(tourId);
-      
+      toast.error('Tour deleted !', {
+        position: toast.POSITION.TOP_RIGHT
+      });
       const updatedtours = tour.filter((t) => t.id !== tourId); 
       setTour(updatedtours);
       getTourdetails()

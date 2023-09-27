@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import "../../styles/addtour_package.css";
+import {toast} from "react-toastify";
 
 
 function TourForm({ isOpen, onClose, onSave }) {
@@ -24,8 +25,9 @@ function TourForm({ isOpen, onClose, onSave }) {
 
   const handleSubmit = () => {
     onSave(tour);
-
-    //Business logic here 
+    toast.success('Tour added successfully !', {
+        position: toast.POSITION.TOP_RIGHT
+      });
     setTour({
         tour_name: " ",
       description: " ",

@@ -29,7 +29,6 @@ export const createnewBookingTour = async (newBooking) => {
         user_email: newBooking.email
     }).then((res) => {
         console.log("service response", res)
-        toast.success("booking created :)");
         return res;
     }).catch((err) => {
         return err.response;

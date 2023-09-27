@@ -14,7 +14,6 @@ export const createnewTour = async (newTour) => {
         tour_discount_price: newTour.tour_discount_price
     }).then((res) => {
         console.log("service response", res)
-        toast.success("tour created :)");
         return res;
     }).catch((err) => {
         return err.response;
