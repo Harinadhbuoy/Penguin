@@ -29,7 +29,6 @@ const Login_controller = async (req, res) => {
         res.status(200).send({ message: "success", existingUser,token })
 
       } else {
-
         res.status(200).send({ message: "User does not Existed; Please Sign Up." })
       }
 
