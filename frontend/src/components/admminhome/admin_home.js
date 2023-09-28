@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const AdminHome = () => {
   const Navigate = useNavigate();
   const handleLogout = () => {
+    localStorage.removeItem('admin_token');
     Navigate('/');
   };
 

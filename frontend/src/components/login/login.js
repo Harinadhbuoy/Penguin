@@ -32,14 +32,17 @@ const LoginPage = () => {
     let logindetails = await login_signup_service.LoginService(formData);
     sessionStorage.setItem("email", formData.email);
     console.log("email: ", logindetails.data.existingUser.email);
+    console.log("token: ", logindetails.data.token);
 
     if (logindetails.data.existingUser.email === "admin@gmail.com") {
+      const admin = localStorage.setItem("admin_token", logindetails.data.token)
       toast.success('Admin login successfull !', {
         position: toast.POSITION.TOP_RIGHT
       });
       Navigate('/admindashboard');
     }
     else {
+      const user = localStorage.setItem("user_token",logindetails.data.token)
       toast.success('User login successfull !', {
         position: toast.POSITION.TOP_RIGHT
       });

@@ -11,6 +11,7 @@ const UserHome = () => {
     const [complaint, setComplaint] = useState([]);
 
     const handleLogout = () => {
+        localStorage.removeItem('user_token');
         Navigate('/')
     };
 

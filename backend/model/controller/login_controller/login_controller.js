@@ -1,6 +1,8 @@
 const db = require("../../entities");
 const user_table = db.signuptable;
 const jwt = require('jsonwebtoken')
+const env= require('dotenv');
+env.config()
 
 
 const Login_controller = async (req, res) => {
@@ -20,11 +22,11 @@ const Login_controller = async (req, res) => {
       // console.log("existing user",existingUser)
       if (existingUser) {
         // console.log("response",existingUser)
-        const token = jwt.sign({ email: existingUser.email }, 'JMAN_USER_LOGIN', { expiresIn: "2d", });
+        const token = jwt.sign({ email: existingUser.email }, process.env.SECRET_KEY, { expiresIn: "1d", });
         // console.log("logged in user details",existingUser);
 
         console.log(token)
-        res.status(200).send({ message: "success", existingUser })
+        res.status(200).send({ message: "success", existingUser,token })
 
       } else {
 
