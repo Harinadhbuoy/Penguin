@@ -84,8 +84,8 @@ const ManageTourPackages = () => {
                   <th>S.NO</th>
                   <th>Tour Name</th>
                   <th>Tour Description</th>
-                  <th>Tour Offer Price</th>
                   <th>Tour Original Price</th>
+                  <th>Tour Offer Price</th>
                   <th>Actions</th>
                 </tr>
               </thead>
